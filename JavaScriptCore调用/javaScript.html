@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScriptCore JavaScript和iOS的交换</title>
+</head>
+<body>
+	<input type="text" name="first"> + <input type="text" name="two">
+	<input type="button"  value="加法运算-JS调用iOS" onclick="onclickButton()">
+	<div>
+		
+
+	</div>
+	<div>结果</div>
+    <div id="addResult"></div>
+</body>
+
+<script>
+	function onclickButton() {
+		var value1 = document.getElementsByName("first")[0].value;
+        var value2 = document.getElementsByName("two")[0].value;
+		add({"first" : value1, "two" : value2});
+	}
+ 
+	function addCallBack(result) {
+       var dom = document.getElementById("addResult");
+       dom.innerHTML = result;
+	}
+</script>
+</html>
